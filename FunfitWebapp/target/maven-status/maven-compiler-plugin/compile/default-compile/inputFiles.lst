@@ -1,0 +1,9 @@
+/home/jannis/eclipse-workspace/Simplilearn-Assessment-Phase2/FunfitWebapp/src/main/java/com/funfit/service/BatchService.java
+/home/jannis/eclipse-workspace/Simplilearn-Assessment-Phase2/FunfitWebapp/src/main/java/com/funfit/dao/ParticipantsDao.java
+/home/jannis/eclipse-workspace/Simplilearn-Assessment-Phase2/FunfitWebapp/src/main/java/com/funfit/service/ParticipantsService.java
+/home/jannis/eclipse-workspace/Simplilearn-Assessment-Phase2/FunfitWebapp/src/main/java/com/funfit/resource/DbResource.java
+/home/jannis/eclipse-workspace/Simplilearn-Assessment-Phase2/FunfitWebapp/src/main/java/com/funfit/controller/BatchController.java
+/home/jannis/eclipse-workspace/Simplilearn-Assessment-Phase2/FunfitWebapp/src/main/java/com/funfit/dao/BatchDao.java
+/home/jannis/eclipse-workspace/Simplilearn-Assessment-Phase2/FunfitWebapp/src/main/java/com/funfit/bean/Batch.java
+/home/jannis/eclipse-workspace/Simplilearn-Assessment-Phase2/FunfitWebapp/src/main/java/com/funfit/controller/ParticipantsController.java
+/home/jannis/eclipse-workspace/Simplilearn-Assessment-Phase2/FunfitWebapp/src/main/java/com/funfit/bean/Participants.java

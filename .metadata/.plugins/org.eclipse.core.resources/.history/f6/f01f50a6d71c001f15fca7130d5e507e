@@ -1,0 +1,17 @@
+package com.funfit.resource;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DbResource {
+	public static Connection getConnection () {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://10.99.0.2:3306:/funfit_db", "remoteUser", "my_password");
+			return con;
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			return null;
+		}
+	}
+}

@@ -1,0 +1,3 @@
+INDEX VERSION 1.134
+/home/jannis/eclipse-workspace/Simplilearn-Assessment-Phase2/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1669527467.index
+/FunfitWebapp/src/main/java

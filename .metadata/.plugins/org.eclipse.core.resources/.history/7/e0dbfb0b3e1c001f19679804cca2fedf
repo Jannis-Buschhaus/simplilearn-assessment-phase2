@@ -1,0 +1,5 @@
+package com.funfit.resource;
+
+public class DbResource {
+
+}

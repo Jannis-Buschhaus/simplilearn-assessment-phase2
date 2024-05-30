@@ -1,0 +1,9 @@
+INDEX VERSION 1.134+/home/jannis/eclipse-workspace/Simplilearn-Assessment-Phase2/.metadata/.plugins/org.eclipse.jdt.core
+2037680370.index
+1865797976.index
+3406045639.index
+467460481.index
+2703910732.index
+4118411421.index
+2226074839.index
+226492444.index

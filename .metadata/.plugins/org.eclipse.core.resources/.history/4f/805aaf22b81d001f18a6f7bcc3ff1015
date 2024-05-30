@@ -1,0 +1,78 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    import="java.util.List,com.funfit.bean.Batch"
+    %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>List of batches</title>
+</head>
+<body>
+	<script type="text/javascript">
+		async function deleteBatch(batchId) {
+			var result
+			try {
+				result = await fetch("/FunfitWebapp/BatchController?id="+batchId,  {
+	    			method: 'DELETE'
+	  			})
+			} catch (e) {
+				result = e
+				console.log(result)
+			} finally {
+				window.location.replace("BatchController?target=viewBatch")
+			}
+		}
+		function showUpdate(batchId, typeOfBatch, time) {
+			document.getElementById("updateBatches").hidden = false
+			document.getElementById("batchId").value = batchId
+			document.getElementById("typeOfBatch").value = typeOfBatch
+			document.getElementById("time").value = time
+		}
+		function updateBatch() {
+			console.log("Update Batch")
+		}
+	</script>
+	<a href="index.jsp">Home</a>
+	<h1>List of Batches</h1>
+	<table border="1">
+		<tr>
+			<th>ID</th><th>Type of Batch</th><th>time</th><th>action</th>
+		</tr>
+		<c:forEach items="${ sessionScope.batch }" var="batch">
+			<tr>
+				<td>${ batch.getBatchId() }</td>
+				<td>${ batch.getTypeOfBatch() }</td>
+				<td>${ batch.getTime() }</td>
+				<td>
+					<button onclick="deleteBatch(${ batch.getBatchId() })">delete</button>
+					<button onclick="showUpdate(batchId=${ batch.getBatchId() }, typeOfBatch='${ batch.getTypeOfBatch() }', time='${ batch.getTime() }')">update</button>
+				</td>
+			</tr>
+		</c:forEach>
+	</table>
+	<div hidden id="updateBatches">
+		<h1>Update batch</h1>
+		<form action="updateBatch()">
+			<label for="batchId">Batch ID: </label>
+				<input readonly type="text" name="batchId" id="batchId" /><br />
+			<label for="typeOfBatch">Type of Batch: </label>
+				<select name="typeOfBatch" id="typeOfBatch">
+					<option value="morning">morning</option>
+					<option value="evening">evening</option>
+				</select><br />
+			<label for="time">Time: </label>
+				<select  id = "time" name="time">
+				<% for(int i=1; i<=12; i++){ %>
+					<option value="<%=i%>am"><%=i%> am</option>
+				<% }%>
+				<% for(int i=1; i<=12; i++){ %>
+					<option value="<%=i%>pm"><%=i%> pm</option>
+				<% }%>
+				</select><br />
+				<button type="submit">Update Batch</button>
+		</form>
+	</div>
+</body>
+</html>

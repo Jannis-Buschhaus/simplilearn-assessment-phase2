@@ -1,0 +1,5 @@
+package com.funfit.dao;
+
+public class BatchDao {
+
+}

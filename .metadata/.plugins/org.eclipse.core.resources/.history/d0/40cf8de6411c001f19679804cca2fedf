@@ -1,0 +1,24 @@
+package com.funfit.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.funfit.bean.Batch;
+import com.funfit.resource.DbResource;
+
+public class BatchDao {
+	
+		public int addBatch (Batch batch) {
+			try {
+				Connection con = DbResource.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("insert into batch values(null, ?, ?);");
+				pstmt.setString(1, batch.getTypeOfBatch());
+				pstmt.setString(2, batch.getTime());
+				return pstmt.executeUpdate();
+			} catch (Exception e) {
+				System.err.println(e.getMessage());
+				return 0;
+			}
+		}
+
+}

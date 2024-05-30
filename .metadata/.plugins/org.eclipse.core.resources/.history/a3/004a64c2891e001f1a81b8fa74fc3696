@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Funfit</title>
+</head>
+<body>
+	<h1>Funfit Webapp</h1>
+	<a href="addBatch.jsp">Add Batch</a><br />
+	<a href="BatchController">View and Manage Batches</a><br />
+	<a href="addParticipant.jsp">Add Participants</a><br />
+	<a href="ParticipantsController">View and Manage Participants</a><br />
+</body>
+</html>

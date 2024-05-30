@@ -1,0 +1,27 @@
+package com.funfit.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.funfit.bean.Participants;
+import com.funfit.resource.DbResource;
+
+public class ParticipantsDao {
+	
+	public int addParticipants (Participants p) {
+		try {
+			Connection con = DbResource.getConnection();
+			PreparedStatement pstmt = con.prepareStatement("insert into participants values(null, ?, ?, ?, ?, ?);");
+			pstmt.setString(1, p.getFname());
+			pstmt.setString(2, p.getLname());
+			pstmt.setInt(3, p.getAge());
+			pstmt.setString(4, p.getPhoneNumer());
+			pstmt.setInt(5, p.getBatchId());
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			return 0;
+		}
+	}
+
+}

@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Batch</title>
+</head>
+<body>
+	<h1>Add Batch</h1>
+	<form action="BatchController" method="post">
+	<label for="typeOfBatch">Type of Batch: </label>
+	<select name="typeOfBatch">
+		<option value="morning">Morning</option>
+		<option value="evening">Evening</option>
+	</select>
+	</form>
+</body>
+</html>

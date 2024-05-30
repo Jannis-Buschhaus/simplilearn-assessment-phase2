@@ -1,0 +1,5 @@
+package com.funfit.bean;
+
+public class Batch {
+
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.funfit.resource.DbResource"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="com.funfit.dao.BatchDao"/>
+    <fullyQualifiedTypeName name="com.funfit.dao.ParticipantsDao"/>
+    <fullyQualifiedTypeName name="com.funfit.service.ParticipantsService"/>
+    <fullyQualifiedTypeName name="com.funfit.service.BatchService"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+</qualifiedTypeNameHistroy>

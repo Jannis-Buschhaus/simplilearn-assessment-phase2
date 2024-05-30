@@ -1,0 +1,57 @@
+package com.funfit.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.funfit.bean.Participants;
+import com.funfit.service.ParticipantsService;
+
+@WebServlet("/ParticipantsController")
+public class ParticipantsController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    public ParticipantsController() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter pw = response.getWriter();
+		HttpSession hs = request.getSession();
+		List<Participants> lp = ParticipantsService.getParticipants();
+		hs.setAttribute("participants", lp);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter pw = response.getWriter();
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		int age = Integer.parseInt(request.getParameter("age"));
+		String phoneNumer = request.getParameter("phoneNumber");
+		int batchId = Integer.parseInt(request.getParameter("batchId"));
+		Participants p = new Participants();
+		p.setFname(fname);
+		p.setLname(lname);
+		p.setAge(age);
+		p.setPhoneNumer(phoneNumer);
+		p.setBatchId(batchId);
+		pw.println(ParticipantsService.addParticipant(p));
+	}
+	
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		super.doPut(req, resp);
+	}
+	
+	@Override
+	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		super.doDelete(req, resp);
+	}
+}
